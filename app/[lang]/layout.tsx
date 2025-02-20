@@ -12,7 +12,7 @@ import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
 import NavBar from "../components/NavBar/NavBar";
-import { LanguageProvider, useLanguage } from "../context/LanguageContext";
+import { LanguageProvider } from "../context/LanguageContext";
 import { store } from "../store/store";
 import { defaultLang } from "../utils/lang";
 
@@ -52,7 +52,7 @@ export default function LangLayout({ children }: LayoutProps) {
   const router = useRouter();
   const path = usePathname();
   const [isClient, setIsClient] = useState<boolean>(false);
-  let lang = useLanguage().lang;
+  let lang = Cookies.get("i18next") || defaultLang;
 
   if (!validLanguages.includes(lang)) {
     lang = defaultLang;
