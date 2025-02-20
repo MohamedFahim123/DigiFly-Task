@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguage } from "@/app/context/LanguageContext";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs";
 import {
@@ -14,8 +15,6 @@ import {
   FaOutdent,
   FaUnderline,
 } from "react-icons/fa";
-import Cookies from "js-cookie";
-import { defaultLang } from "@/app/utils/lang";
 
 const buttonsArr = [
   { command: "bold", icon: <FaBold />, title: "Bold" },
@@ -38,7 +37,7 @@ const EditorContent = () => {
   const [content, setContent] = useState<string>("");
   const [activeStyles, setActiveStyles] = useState<string[]>([]);
   const [selectedFont, setSelectedFont] = useState<string>("Poppins");
-  const lang : string = Cookies.get("i18next") || defaultLang
+  const { lang } = useLanguage();
 
   const inputRef = useRef<HTMLDivElement>(null);
   const [history, setHistory] = useState<string[]>([""]);
@@ -174,8 +173,8 @@ const EditorContent = () => {
         onBlur={updateActiveStyles}
         className={`color-[#1A1A1A] bg-[#6D5CBC05] border border-gray-200 p-6 min-h-[300px] focus:outline-none w-full`}
         ref={inputRef}
-        dir={lang === 'en' ? 'ltr' : 'rtl'}
-        dangerouslySetInnerHTML={{ __html: content }}   
+        dir={lang === "en" ? "ltr" : "rtl"}
+        dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>
   );

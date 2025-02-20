@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from "@/app/store/store";
 import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../Loader/Loader";
 
 const Table = () => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ const Table = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
 
   const validUsers = users

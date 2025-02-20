@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguage } from "@/app/context/LanguageContext";
 import {
   setEmail,
   setFirstName,
@@ -9,8 +10,6 @@ import {
 } from "@/app/store/slices/formSlice";
 import { AppDispatch, RootState } from "@/app/store/store";
 import { CustomInputInterface } from "@/app/utils/interaces";
-import { defaultLang } from "@/app/utils/lang";
-import Cookies from "js-cookie";
 import { useTranslation } from "next-i18next";
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,7 +19,7 @@ const Form = () => {
   const dispatch = useDispatch<AppDispatch>();
   const formState = useSelector((state: RootState) => state.form);
   const { t } = useTranslation();
-  const lang: string = Cookies.get("i18next") ?? defaultLang;
+  const { lang } = useLanguage();
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const inputRefs = useRef<{ [key: string]: HTMLInputElement }>({});

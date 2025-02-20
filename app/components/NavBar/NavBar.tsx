@@ -10,13 +10,14 @@ import React, { useState } from "react";
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLang, setIsOpenLang] = useState<boolean>(false);
+  const { lang, setLang } = useLanguage();
 
   const handleChange = () => setIsOpenLang(!isOpenLang);
   const changeLanguage = (lang: string, dir: string) => {
     i18next.changeLanguage(lang);
     document.documentElement.dir = dir;
+    setLang(lang);
   };
-  const lang: string = useLanguage().lang;
   const { t } = useTranslation();
 
   const toggleNavbar = () => {
@@ -31,7 +32,7 @@ function NavBar() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
-            src={'/logo.svg'}
+            src={"/logo.svg"}
             alt="DigiFly Logo"
             width={76}
             height={56}
