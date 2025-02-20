@@ -1,0 +1,28 @@
+.title {
+  /* font-size: 2rem; */
+  margin-inline-start: 5rem;
+  position: relative;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 0.25rem;
+  background-color: #6d5cbc;
+}
+.titleAr::before {
+  right: -5rem;
+}
+.titleEn::before {
+  left: -5rem;
+}
+.content {
+  max-width: 1021px;
+  line-height: 27px;
+  color: #666666;
+  /* font-size: 1.125rem; */
+  font-weight: 400;
+}

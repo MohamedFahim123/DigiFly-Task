@@ -1,0 +1,39 @@
+{
+  "formData": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Mobile Number",
+    "email": "Email",
+    "submit": "Send"
+  },
+  "tableTitle": "Results :",
+  "tableData": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Mobile Number",
+    "email": "Email"
+  },
+  "mapTitle": "Digi Fly Company welcomes you",
+  "editorPlaceHolder": "Write Here",
+  "links": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "categories": "Categories"
+  },
+  "lang": "En",
+  "src": "/assets/america.svg",
+  "firstSection": {
+    "title": "Part 1",
+    "content": "Utilize the provided Strapi API from the assessment to post user data into your Redux store. You are required to add one user into the 'users' collection and display this data in a table using a GET request. Ensure the implementation of Redux for state management, including both POST requests for adding a user and GET requests for displaying data in the table."
+  },
+  "secondSection": {
+    "title": "Part 2",
+    "content": "Implement a map using any library of your choice (Leaflet is recommended). Search for the coordinates of 'Digifly Company' on Google Maps, then place a tooltip at these coordinates. Ensure that the tooltip styling matches the provided design below."
+  },
+  "lastSection": {
+    "title": "Part 3",
+    "content": "Implement a text editor that precisely replicates the UI styles provided. It's essential to create the undo and redo functionalities from scratch, along with two additional features of your choice. You may use any package, but creating these functionalities from scratch will be advantageous. Ensure that all text editor functionalities are operational."
+  },
+  "footer": "All Rights Reserved Digifly 2024"
+}
